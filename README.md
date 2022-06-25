@@ -1,8 +1,10 @@
-author: MACALINAO, Prince Rupert D.
+author: swiftieee
 
 description: cute webpage containing a timer and images with description
 
 date created: 2022/06/24 
+
+update 01: 2022/06/25
 
 demo：https://swiftieee.github.io/
 
