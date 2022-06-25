@@ -13,6 +13,12 @@
 	src: url("../fonts/IndieFlower-Regular.ttf");
 }
 
+html,
+body{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
 #typeDiv {
 	position: absolute;
@@ -46,7 +52,7 @@
 	right: 0;
 	margin: auto;
 	width: 100%;
-	height: 20%;
+	height: 15%;
 }
 
 #together{
@@ -116,15 +122,15 @@
 }
 
 #button:active {
-	width: 92%;
-	height: 92%;
+	width: 85%;
+	height: 85%;
 }
 
 #imgTxt{
 	position: absolute;
 	display: table;
 	vertical-align: middle;
-	top: 20%;
+	top: 22%;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -138,7 +144,7 @@
 	right: 0;
 	margin: auto;
 	width: auto;
-	height: 100%;
+	height: auto;
 }
 
 #Txt{
