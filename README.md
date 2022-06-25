@@ -1,5 +1,7 @@
 author: MACALINAO, Prince Rupert D.
+
 description: cute webpage containing a timer and images with description
+
 date created: 2022/06/24 
 
 demo：
