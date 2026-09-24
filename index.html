@@ -8,10 +8,13 @@
 	</head>
 
 	<body style="margin:0px">
-		<audio src="music/music2.mp3" type="audio/mpeg"> NOT SUPPORTED
-		</audio>
 		<canvas></canvas>
-		<div id="imgTxt">
+
+		 <div id="spotifyPlayer"></div>
+
+    	<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+
+    <div id="imgTxt">
 			<span id="Txt"></span> <br />
 			<span id="tmp"></span>
 			<img id="img" src="">
@@ -22,6 +25,89 @@
 				<button id="button" onclick="play()"></button>
 			</div>
 		</div>
+
+<div id="tgButtonContainer">
+    <img id="tgButton" src="pic/tg.png" alt="Analytics">
+</div>
+
+<!-- Interactive analytics presentation -->
+<div id="tgPresentation" aria-hidden="true">
+    <div id="analyticsDashboard">
+        <div class="analyticsHeader">
+            <div>
+                <span class="analyticsEyebrow">OUR CONVERSATION</span>
+                <h2 id="analyticsTitle">1,222,117 messages</h2>
+                <p id="analyticsSubtitle">Five years of conversations, together.</p>
+            </div>
+            <button id="analyticsClose" type="button" aria-label="Close analytics">×</button>
+        </div>
+
+        <div id="analyticsPages">
+            <section class="analyticsPage active" data-page="0">
+                <div class="analyticsCards">
+                    <div class="analyticsCard"><span>Rupert</span><strong>639,935</strong><small>52.36% of messages</small></div>
+                    <div class="analyticsCard"><span>Reese</span><strong>582,182</strong><small>47.64% of messages</small></div>
+                    <div class="analyticsCard"><span>Total messages</span><strong>1,222,117</strong><small>combined</small></div>
+                </div>
+                <div class="analyticsPanel">
+                    <h3>Message balance</h3>
+                    <div class="balanceBar"><div class="balanceRupert" style="width:52.36%"></div><div class="balanceReese" style="width:47.64%"></div></div>
+                    <div class="balanceLabels"><span>Rupert · 52.36%</span><span>Reese · 47.64%</span></div>
+                </div>
+            </section>
+
+            <section class="analyticsPage" data-page="1">
+                <div class="analyticsPanel chartPanel"><h3>Messages by month</h3><div id="monthChart" class="barChart"></div></div>
+            </section>
+
+            <section class="analyticsPage" data-page="2">
+                <div class="analyticsPanel chartPanel"><h3>Messages by hour</h3><div id="hourChart" class="barChart hourly"></div></div>
+            </section>
+
+            <section class="analyticsPage" data-page="3">
+                <div class="analyticsCards voiceCards">
+                    <div class="analyticsCard"><span>Rupert</span><strong>128</strong><small>voice messages</small></div>
+                    <div class="analyticsCard"><span>Reese</span><strong>378</strong><small>voice messages</small></div>
+                    <div class="analyticsCard"><span>Total</span><strong>506</strong><small>voice messages</small></div>
+                </div>
+                <div class="analyticsPanel voicePanel">
+                    <h3>Voice messages</h3>
+                    <p>Out of 506 voice messages, 25.30% were sent by Rupert and 74.70% by Reese.</p>
+                    <div class="voiceBar"><div style="width:25.30%"></div><div style="width:74.70%"></div></div>
+                </div>
+            </section>
+
+            <section class="analyticsPage" data-page="4">
+                <div class="analyticsPanel">
+                    <h3>Five years in numbers</h3>
+                    <div class="miniStats">
+                        <div><b>1.22M</b><span>messages shared</span></div>
+                        <div><b>506</b><span>voice messages</span></div>
+                        <div><b>52.36%</b><span>Rupert's share</span></div>
+                        <div><b>47.64%</b><span>Reese's share</span></div>
+                    </div>
+                    <p class="analyticsNote">The message totals are based on the five-year monthly and hourly results you provided.</p>
+                </div>
+            </section>
+
+            <section class="analyticsPage wordCloudPage" data-page="5">
+                <div class="wordCloudWrap">
+                    <span class="analyticsEyebrow">THE WORDS WE SHARED</span>
+                    <h3>Our conversations, in words.</h3>
+                    <img src="pic/wordcloud.png" alt="Our conversation word cloud" onerror="this.style.display='none';document.getElementById('wordCloudMissing').style.display='block';">
+                    <p id="wordCloudMissing" style="display:none">Place your word cloud at <code>pic/wordcloud.png</code> to show it here.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="analyticsControls">
+            <button id="analyticsPrev" type="button">‹</button>
+            <div id="analyticsDots"></div>
+            <button id="analyticsNext" type="button">›</button>
+        </div>
+    </div>
+</div>
+
 		<div id="content">
 			<h1 id="together">We have known each other for</h1>
 			<div id="timer">
@@ -42,10 +128,67 @@
 			var flag = 1;
 			var myImage = document.getElementById("img");
 			var myTxt = document.getElementById("Txt");
-			var imageArray = ["pic/1.png", "pic/2.png", "pic/3.png", "pic/4.png", "pic/5.png", "pic/6.png", "pic/7.png", "pic/8.png", "pic/9.png", "pic/10.png", "pic/11.png", "pic/12.png", "pic/13.png", "pic/14.png", "pic/15.png", "pic/16.png", "pic/17.png", "pic/18.png", "pic/19.png", "pic/20.png", "pic/21.png", "pic/22.png", "pic/23.png", "pic/24.png"];
+			var imageArray = [
+"pic/01-polaroid.png",
+"pic/02-polaroid.png",
+"pic/03-polaroid.png",
+"pic/04-polaroid.png",
+"pic/05-polaroid.png",
+"pic/06-polaroid.png",
+"pic/07-polaroid.png",
+"pic/08-polaroid.png",
+"pic/09-polaroid.png",
+"pic/10-polaroid.png",
+"pic/11-polaroid.png",
+"pic/12-polaroid.png",
+"pic/13-polaroid.png",
+"pic/14-polaroid.png",
+"pic/15-polaroid.png",
+"pic/16-polaroid.png",
+"pic/17-polaroid.png",
+"pic/18-polaroid.png",
+"pic/19-polaroid.png",
+"pic/20-polaroid.png",
+"pic/21-polaroid.png",
+"pic/22-polaroid.png",
+"pic/23-polaroid.png",
+"pic/24-polaroid.png",
+"pic/25-polaroid.png",
+"pic/26-polaroid.png",
+"pic/27-polaroid.png",
+"pic/28-polaroid.png",
+"pic/29-polaroid.png",
+"pic/30-polaroid.png",
+"pic/31-polaroid.png",
+"pic/32-polaroid.png",
+"pic/33-polaroid.png",
+"pic/34-polaroid.png",
+"pic/35-polaroid.png",
+"pic/36-polaroid.png",
+"pic/37-polaroid.png",
+"pic/38-polaroid.png",
+"pic/39-polaroid.png",
+"pic/40-polaroid.png",
+"pic/41-polaroid.png",
+"pic/42-polaroid.png",
+"pic/43-polaroid.png",
+"pic/44-polaroid.png",
+"pic/45-polaroid.png",
+"pic/46-polaroid.png",
+"pic/47-polaroid.png",
+"pic/48-polaroid.png",
+"pic/49-polaroid.png",
+"pic/50-polaroid.png",
+"pic/51-polaroid.png",
+"pic/52-polaroid.png",
+"pic/53-polaroid.png",
+"pic/54-polaroid.png",
+"pic/55-polaroid.png",
+"pic/56-polaroid.png",
+];
 			var imageIndex = 0;
-			var txtArray = ["this convo started everything :)", "first selfie sent this part two awieee", "unang maayos na selfie tapos after pa makita crush sa church hmp", "wowieee i'm so proud of you for this", "our first political rally togetheeer~",  "remember when we talked about how monotone the world is ?",  "unang beses mo nagtampo na legit and nadisappoint :(", "remember miss ellie ?", "you asked me which suits you betteeer", "i love how you loved your body babe", "yung arts na 'di naman inistory :(", "ah yes first libre ni mommy reese", "next time ihatid na kita by car para 'di ka na mag commute", "i just love this outfit babe", "your first oops in UP :<", "alexa play dress by taylor swift", "first time ko mag request ng selfie hihi", "reminds me of your inner child babe", "THE FLEX GRABE HAHAHAHAHA", "remember that bantering na nagtampo ka :<", "yung macbook mo na hanggang ngayon wala pa rin HAHAHAHAHA", "your first bar exp wowieeee", "bagay talaga sayo short hair babe", "lana del rey pa may iristella naman aq hihi"];
-			 var len = imageArray.length;
+			var txtArray = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ];
+			var len = imageArray.length;
 			var t = 0;
 		</script>
 		

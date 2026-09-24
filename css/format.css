@@ -1,16 +1,16 @@
 @font-face {
-	font-family: "Bryndan";
-	src: url("../fonts/Bryndan_Write.ttf");
+    font-family: "Bryndan";
+    src: url("../fonts/Bryndan_Write.ttf");
 }
 
 @font-face {
-	font-family: "Typewriter";
-	src: url("../fonts/Typewriter.ttf");
+    font-family: "Typewriter";
+    src: url("../fonts/Typewriter.ttf");
 }
 
 @font-face {
-	font-family: "IndieFlower";
-	src: url("../fonts/IndieFlower-Regular.ttf");
+    font-family: "IndieFlower";
+    src: url("../fonts/IndieFlower-Regular.ttf");
 }
 
 html,
@@ -20,146 +20,511 @@ body{
   overflow: hidden;
 }
 
+#spotifyPlayer {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: -100px;
+    bottom: -100px;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#spotifyPlayer iframe {
+    border: 0;
+}
+
 #typeDiv {
-	position: absolute;
-	top: 45%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 100%;
-	height: 10%;
-	text-align: center;
+    position: absolute;
+    top: 24%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 10%;
+    text-align: center;
 }
 
 #txt1 {
-	font-family: Typewriter;
-	font-size: 16px;
-	text-align: center;
-	color: white;
+    font-family: Typewriter;
+    font-size: 25px;
+    text-align: center;
+    color: white;
 }
 #txt2 {
-	font-family: Typewriter;
-	font-size: 16px;
-	text-align: center;
-	color: white;
+    font-family: Typewriter;
+    font-size: 20px;
+    text-align: center;
+    color: white;
 }
 
 #content{
-	font-family: Bryndan;
-	position: absolute;
-	top: 1%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 100%;
-	height: 15%;
+    font-family: Bryndan;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 15%;
 }
 
 #together{
-	font-size: 35px;
-	text-align: center;
-	color: white;
+    font-size: 35px;
+    text-align: center;
+    color: white;
 }
 
 #timer{
-	text-align: center;
-	color: white;
+    text-align: center;
+    color: white;
 }
 
 #d{
-	font-size: 25px;
+    font-size: 25px;
 }
 
 #h{
-	font-size: 25px;
+    font-size: 25px;
 }
 
 #m{
-	font-size: 25px;
+    font-size: 25px;
 }
 
 #s{
-	font-size: 25px;
+    font-size: 25px;
 }
 
-#heartTxt{
-	position: absolute;
-	display: table;
-	vertical-align: middle;
-	top: 80%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 10%;
-	height: 8%;
-}
+
 
 #clickMe{
-	display: inline-block;
-	font-size: 16px;
-	width: 100%;
-	text-align: center;
-	color: white;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
 #heart{
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-#button{
-	background-image: url("../pic/heart.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-color: transparent;
-	border: none;
-	outline: none;
-	background-position: center;
-	transition: 0.1s;
-	width: 100%;
-	height: 100%;
+#button {
+    background-image: url("../pic/heart.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-position: center;
+    width: 100%;
+    height: 100%;
 
+    transition: transform 0.15s ease;
 }
 
 #button:active {
-	width: 85%;
-	height: 85%;
+    transform: scale(0.75);
 }
 
 #imgTxt{
-	position: absolute;
-	display: table;
-	vertical-align: middle;
-	top: 22%;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 100%;
-	height: 50%;
+    position: absolute;
+    display: table;
+    vertical-align: middle;
+    top: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 50%;
 }
 
 #img{
-	display: block;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: auto;
-	height: auto;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: auto;
+    height: auto;
 }
 
 #Txt{
-	font-family: IndieFlower;
-	display: inline-block;
-	font-size: 21px;
-	width: 100%;
-	text-align: center;
-	color: white;
+    font-family: IndieFlower;
+    display: inline-block;
+    font-size: 21px;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
 #tmp{
-	display: inline-block;
-	font-size: 17px;
-	width: 100%;
-	text-align: center;
-	color: white;
+    display: inline-block;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+/* ================================
+   ANALYTICS BUTTON + PRESENTATION
+   ================================ */
+
+#tgPresentation {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: auto;
+    overflow: hidden;
+}
+
+#analyticsDashboard {
+    width: min(1040px, 92vw);
+    height: min(720px, 88vh);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-family: Typewriter, monospace;
+}
+
+.analyticsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+.analyticsEyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: .65;
+}
+
+.analyticsHeader h2 {
+    margin: 5px 0 3px;
+    font-family: Bryndan, cursive;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: normal;
+}
+
+.analyticsHeader p {
+    margin: 0;
+    opacity: .72;
+    font-size: 14px;
+}
+
+#analyticsClose {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#analyticsPages {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+}
+
+.analyticsPage {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(18px);
+    transition: opacity .3s ease, transform .3s ease;
+    overflow: auto;
+}
+
+.analyticsPage.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.analyticsCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.analyticsCard, .analyticsPanel {
+    background: rgba(255,255,255,.075);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+.analyticsCard {
+    padding: 22px;
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.analyticsCard span { opacity: .7; font-size: 14px; }
+.analyticsCard strong {
+    font-family: Bryndan, cursive;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: normal;
+    margin: 5px 0;
+}
+.analyticsCard small { opacity: .55; font-size: 12px; }
+
+.analyticsPanel { padding: 24px; }
+.analyticsPanel h3 {
+    margin: 0 0 20px;
+    font-family: Bryndan, cursive;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.balanceBar, .voiceBar {
+    height: 28px;
+    display: flex;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255,255,255,.08);
+}
+.balanceRupert, .voiceBar div:first-child { background: #f3a7c4; }
+.balanceReese, .voiceBar div:last-child { background: #a9b9ff; }
+.balanceLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: .72;
+}
+
+.chartPanel { height: 100%; display: flex; flex-direction: column; }
+.barChart {
+    flex: 1;
+    min-height: 330px;
+    display: flex;
+    align-items: stretch;
+    gap: 7px;
+    padding: 8px 4px 0;
+}
+.chartGroup {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.chartBars {
+    height: calc(100% - 24px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+}
+.chartBar {
+    width: 42%;
+    min-height: 3px;
+    border-radius: 5px 5px 0 0;
+    transition: filter .2s ease, height .5s ease;
+}
+.chartBar:hover { filter: brightness(1.3); }
+.chartRupert { background: #f3a7c4; }
+.chartReese { background: #a9b9ff; }
+.chartLabel {
+    text-align: center;
+    font-size: 10px;
+    opacity: .6;
+    margin-top: 7px;
+}
+
+.voiceCards { margin-bottom: 14px; }
+.voicePanel p { opacity: .72; line-height: 1.6; }
+.voiceBar { margin-top: 22px; }
+
+.miniStats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+.miniStats div {
+    padding: 20px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.055);
+}
+.miniStats b {
+    display: block;
+    font-family: Bryndan, cursive;
+    font-size: 34px;
+    font-weight: normal;
+}
+.miniStats span { opacity: .6; font-size: 12px; }
+.analyticsNote { margin: 22px 0 0; opacity: .55; font-size: 12px; line-height: 1.6; }
+
+.wordCloudPage { display: flex; align-items: center; justify-content: center; text-align: center; }
+.wordCloudWrap { width: 100%; }
+.wordCloudWrap h3 {
+    font-family: Bryndan, cursive;
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: normal;
+    margin: 10px 0 25px;
+}
+.wordCloudWrap img {
+    display: block;
+    max-width: 90%;
+    max-height: 48vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 18px;
+}
+.wordCloudWrap code { opacity: .8; }
+
+.analyticsControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 16px;
+}
+.analyticsControls > button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+#analyticsDots { display: flex; gap: 7px; }
+#analyticsDots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.35);
+    cursor: pointer;
+}
+#analyticsDots button.active { background: white; transform: scale(1.35); }
+
+@media (max-width: 650px) {
+    
+    
+    #analyticsDashboard { width: 88vw; height: 86vh; }
+    .analyticsCards { grid-template-columns: 1fr; gap: 8px; }
+    .analyticsCard { min-height: 88px; padding: 15px; }
+    .analyticsCard strong { font-size: 28px; }
+    .analyticsPanel { padding: 16px; }
+    .barChart { min-height: 270px; gap: 2px; }
+    .chartBar { width: 45%; }
+    .chartLabel { font-size: 8px; }
+    .miniStats { grid-template-columns: 1fr 1fr; }
+}
+
+/* =========================================
+   HEART + TELEGRAM BUTTONS
+   ========================================= */
+
+#heartTxt:hover {
+    transform: scale(1.08);
+}
+
+/* Telegram hover */
+#tgButtonContainer:hover {
+    transform: scale(1.08);
+}
+
+
+#heartTxt,
+#tgButtonContainer {
+    position: fixed;
+    bottom: 8%;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    /* Hidden initially */
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+}
+
+/* Heart position */
+#heartTxt {
+    left: calc(50% - 90px);
+}
+
+/* Telegram position */
+#tgButtonContainer {
+    left: calc(50% + 10px);
+}
+
+/* Heart's actual button */
+#heartTxt #heart,
+#heartTxt #button {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Images */
+#heartTxt img,
+#tgButton {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+
+/* Telegram */
+#tgButton {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#tgButton:hover {
+    transform: scale(1.08);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    #heartTxt {
+        left: calc(50% - 90px);
+    }
+
+    #tgButtonContainer {
+        left: calc(50% + 10px);
+    }
 }
